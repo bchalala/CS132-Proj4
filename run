@@ -1,0 +1,1 @@
+java -cp vapor-parser.jar:. < factorial.vapor V2VM > factorial.vaporm

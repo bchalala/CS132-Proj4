@@ -1,0 +1,1 @@
+javac V2VM.java -sourcepath . -cp vapor-parser.jar
