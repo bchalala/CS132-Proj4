@@ -74,7 +74,7 @@ public class V2VM {
 
 	public static FuncData translateFunction(VFunction func, int index) {
 		// 
-		FuncData curFData = new FuncData();
+		FuncData curFData = new FuncData(func);
 
 		// Assign all parameters to an in variable
 		for (VVarRef.Local p: func.params) {
@@ -94,7 +94,7 @@ public class V2VM {
 		int maxlabelnum = func.labels.length;
 		for (VInstr inst: func.body) {
 			try {
-				if (labelnum < maxlabelnum 
+				while (labelnum < maxlabelnum 
 					&& func.labels[labelnum].instrIndex < linenum) {
 					curFData.addLine(func.labels[labelnum].ident + ":");
 					labelnum++;

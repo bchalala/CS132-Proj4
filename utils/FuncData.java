@@ -22,7 +22,18 @@ public class FuncData {
 
 	private String body = "";
 
-	public FuncData() {return;}
+	public VFunction vf;
+
+	public FuncData(VFunction vfunction) {vf = vfunction;}
+
+	public void writeLabels() {
+		if (vf.labels == null)
+			return;
+
+		for (int i = 0; i < vf.labels.length; i++) {
+			System.out.println(vf.labels[i].instrIndex + ": " + vf.labels[i].ident + ":");
+		}
+	}
 
 	// Test if the names of variables get correctly added
 	public void writeNames() {
